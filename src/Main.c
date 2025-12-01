@@ -53,7 +53,6 @@ void Setup(AlxWindow* w){
 	// }
 }
 void Update(AlxWindow* w){
-	
 	if (Stroke(ALX_KEY_Q).DOWN) fNear += 0.1f * w->ElapsedTime;
 	if (Stroke(ALX_KEY_A).DOWN) fNear -= 0.1f * w->ElapsedTime;
 	if (Stroke(ALX_KEY_W).DOWN) fFar += 0.1f * w->ElapsedTime;
@@ -119,7 +118,7 @@ void Delete(AlxWindow* w){
 }
 
 int main(){
-    if(Create("Mode7",320,240,2,2,Setup,Update,Delete))
+    if(Create("Mode7",800,600,2,2,Setup,Update,Delete))
         Start();
     return 0;
 }
