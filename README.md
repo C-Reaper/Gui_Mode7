@@ -1,193 +1,65 @@
-# Gui_Mode7
+## Project README
 
+### Overview
+This project is a simple Mode 7 graphics emulator implemented in C. The emulator allows for basic 3D to 2D projection, enabling users to visualize 3D objects in a 2D plane.
 
-## Project Overview
+### Features
+- Basic Mode 7 graphics projection.
+- User controls for movement and rotation of the 3D scene.
+- Support for loading textures from image files.
 
-This project implements specialized functionality related to mode7.
+### Project Structure
 
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for mode7
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
-
-### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+#### Prerequisites
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
+- Libraries needed in specific projects: X11 for Linux, WinAPI for Windows, WINE for cross-compiling to Windows
 
-### Build Steps
+## Build & Run
 
-1. Navigate to project directory:
-```bash
-cd Gui_Mode7
+### Build Process
+To build the project, navigate to the project directory and run the appropriate makefile based on your operating system:
+
+```sh
+# For Linux
+cd <Project>
+make -f Makefile.linux all
+
+# For Windows
+make -f Makefile.windows all
+
+# For Linux cross-compile for Windows (WINE)
+make -f Makefile.wine all
+
+# For WebAssembly using Emscripten
+make -f Makefile.web all
 ```
 
-2. Build the project:
-```bash
-make -f Makefile.(os) all
-```
+### Execution
+After building the project, you can run it by executing:
 
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
-```
-
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
+```sh
+# For Linux and Wine output
 make -f Makefile.(os) exe
+
+# For Windows output (run in WINE environment)
+WINEPREFIX=~/wine64 WINEARCH=win64 wine build/Main.exe
 ```
 
-## Project Organization
+### Clean Build
+To clean the build directory and remove all generated files:
 
+```sh
+# For Linux
+make -f Makefile.linux clean
+
+# For Windows
+make -f Makefile.windows clean
+
+# For Linux cross-compile for Windows (WINE)
+make -f Makefile.wine clean
+
+# For WebAssembly using Emscripten
+make -f Makefile.web clean
 ```
-Gui_Mode7/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
